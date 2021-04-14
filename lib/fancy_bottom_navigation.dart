@@ -44,8 +44,8 @@ class FancyBottomNavigation extends StatefulWidget {
 
 class FancyBottomNavigationState extends State<FancyBottomNavigation>
     with TickerProviderStateMixin, RouteAware {
-  Widget nextIcon = Icon(Icons.search);
-  Widget activeIcon = Icon(Icons.search);
+  Widget nextIcon = Container(child: Icon(Icons.search));
+  Widget activeIcon = Container(child: Icon(Icons.search));
 
   int currentSelected = 0;
   double _circleAlignX = 0;
