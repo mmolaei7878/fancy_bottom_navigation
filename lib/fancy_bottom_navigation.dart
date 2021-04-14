@@ -44,8 +44,8 @@ class FancyBottomNavigation extends StatefulWidget {
 
 class FancyBottomNavigationState extends State<FancyBottomNavigation>
     with TickerProviderStateMixin, RouteAware {
-  IconData nextIcon = Icons.search;
-  IconData activeIcon = Icons.search;
+  Widget nextIcon = Icon(Icons.search);
+  Widget activeIcon = Icon(Icons.search);
 
   int currentSelected = 0;
   double _circleAlignX = 0;
@@ -124,7 +124,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation>
                 .map((t) => TabItem(
                     uniqueKey: t.key,
                     selected: t.key == widget.tabs[currentSelected].key,
-                    iconData: t.iconData,
+                    widget: t.iconData,
                     title: t.title,
                     iconColor: inactiveIconColor,
                     textColor: textColor,
@@ -196,10 +196,11 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation>
                                 duration:
                                     Duration(milliseconds: ANIM_DURATION ~/ 5),
                                 opacity: _circleIconAlpha,
-                                child: Icon(
-                                  activeIcon,
-                                  color: activeIconColor,
-                                ),
+                                child: Container(
+                                    color: activeIconColor,
+                                    child: Center(
+                                      child: activeIcon,
+                                    )),
                               ),
                             ),
                           ),

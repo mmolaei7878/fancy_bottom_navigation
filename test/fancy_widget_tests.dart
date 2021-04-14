@@ -5,18 +5,16 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   Widget makeTestableWidget({required Widget child}) {
     return MaterialApp(
-        theme: ThemeData(primaryColor: Colors.pink,
-        brightness: Brightness.light),
-        home: Scaffold(
-            body: Center(),
-            bottomNavigationBar: child));
+        theme:
+            ThemeData(primaryColor: Colors.pink, brightness: Brightness.light),
+        home: Scaffold(body: Center(), bottomNavigationBar: child));
   }
 
   testWidgets('Fancy Nav has correct tabs', (WidgetTester tester) async {
     FancyBottomNavigation fn = FancyBottomNavigation(
       tabs: [
-        TabData(iconData: Icons.home, title: "Home"),
-        TabData(iconData: Icons.search, title: "Search")
+        TabData(iconData: Icon(Icons.home), title: "Home"),
+        TabData(iconData: Icon(Icons.search), title: "Search")
       ],
       onTabChangedListener: (position) {},
     );
@@ -37,14 +35,13 @@ void main() {
 
     final randomFinder = find.text("Hello");
     expect(randomFinder, findsNothing);
-
   });
 
   testWidgets('Clicking icon moves the circle', (WidgetTester tester) async {
     FancyBottomNavigation fn = FancyBottomNavigation(
       tabs: [
-        TabData(iconData: Icons.home, title: "Home"),
-        TabData(iconData: Icons.search, title: "Search")
+        TabData(iconData: Icon(Icons.home), title: "Home"),
+        TabData(iconData: Icon(Icons.search), title: "Search")
       ],
       onTabChangedListener: (position) {},
     );
@@ -68,7 +65,5 @@ void main() {
 
     expect(searchIconFinder, findsNWidgets(2));
     expect(homeIconFinder, findsOneWidget);
-
   });
-
 }
