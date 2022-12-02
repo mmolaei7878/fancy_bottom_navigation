@@ -40,8 +40,7 @@ class TabItem extends StatelessWidget {
           Container(
             height: double.infinity,
             width: double.infinity,
-            child: AnimatedAlign(
-                duration: Duration(milliseconds: ANIM_DURATION),
+            child: Align(
                 alignment: Alignment(0, TEXT_ON),
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
@@ -56,25 +55,19 @@ class TabItem extends StatelessWidget {
           Container(
             height: double.infinity,
             width: double.infinity,
-            child: AnimatedAlign(
-              duration: Duration(milliseconds: ANIM_DURATION),
-              curve: Curves.easeIn,
+            child: Align(
               alignment: Alignment(0, ICON_OFF),
-              child: AnimatedOpacity(
-                duration: Duration(milliseconds: ANIM_DURATION),
-                opacity: 1,
-                child: IconButton(
-                  highlightColor: Colors.transparent,
-                  splashColor: Colors.transparent,
-                  padding: EdgeInsets.all(0),
-                  alignment: Alignment(0, 0),
-                  icon: Center(
-                    child: selected ? null : widget,
-                  ),
-                  onPressed: () {
-                    callbackFunction(uniqueKey);
-                  },
+              child: IconButton(
+                highlightColor: Colors.transparent,
+                splashColor: Colors.transparent,
+                padding: EdgeInsets.all(0),
+                alignment: Alignment(0, 0),
+                icon: Center(
+                  child: selected ? null : widget,
                 ),
+                onPressed: () {
+                  callbackFunction(uniqueKey);
+                },
               ),
             ),
           )
