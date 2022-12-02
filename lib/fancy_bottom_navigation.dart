@@ -128,6 +128,9 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
         Positioned.fill(
           top: -(CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE) / 2,
           child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+            ),
             child: AnimatedAlign(
               duration: Duration(milliseconds: ANIM_DURATION),
               curve: Curves.easeOut,
