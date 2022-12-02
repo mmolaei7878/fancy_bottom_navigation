@@ -9,13 +9,15 @@ const double ALPHA_ON = 1;
 const int ANIM_DURATION = 300;
 
 class TabItem extends StatelessWidget {
-  TabItem(
-      {required this.uniqueKey,
-      required this.widget,
-      required this.title,
-      required this.callbackFunction,
-      required this.textColor,
-      required this.iconColor});
+  TabItem({
+    required this.uniqueKey,
+    required this.widget,
+    required this.title,
+    required this.callbackFunction,
+    required this.textColor,
+    required this.iconColor,
+    required this.selected,
+  });
 
   final UniqueKey uniqueKey;
   final String title;
@@ -23,6 +25,7 @@ class TabItem extends StatelessWidget {
   final Function(UniqueKey uniqueKey) callbackFunction;
   final Color textColor;
   final Color iconColor;
+  final bool selected;
 
   // final double iconYAlign = ICON_ON;
   final double textYAlign = TEXT_OFF;
@@ -66,7 +69,7 @@ class TabItem extends StatelessWidget {
                   padding: EdgeInsets.all(0),
                   alignment: Alignment(0, 0),
                   icon: Center(
-                    child: widget,
+                    child: selected ? null : widget,
                   ),
                   onPressed: () {
                     callbackFunction(uniqueKey);

@@ -97,8 +97,10 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
       children: <Widget>[
         Container(
           height: BAR_HEIGHT,
+          alignment: Alignment.center,
           decoration: BoxDecoration(
               color: barBackgroundColor,
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
               boxShadow: [BoxShadow(color: Colors.black12, offset: Offset(0, -1), blurRadius: 8)]),
           child: Row(
             mainAxisSize: MainAxisSize.max,
@@ -106,7 +108,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
             children: widget.tabs
                 .map((t) => TabItem(
                     uniqueKey: t.key,
-                    // selected: t.key == widget.tabs[currentSelected].key,
+                    selected: t.key == widget.tabs[currentSelected].key,
                     widget: t.iconData,
                     title: t.title,
                     iconColor: inactiveIconColor,
