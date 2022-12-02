@@ -49,7 +49,7 @@ class TabItem extends StatelessWidget {
                     title,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
-                    style: TextStyle(fontWeight: FontWeight.w400, color: textColor),
+                    style: TextStyle(fontWeight: selected ? FontWeight.w600 : FontWeight.w400, color: textColor),
                   ),
                 )),
           ),

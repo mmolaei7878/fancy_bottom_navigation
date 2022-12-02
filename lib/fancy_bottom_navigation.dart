@@ -102,24 +102,27 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
               color: barBackgroundColor,
               borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
               boxShadow: [BoxShadow(color: Colors.black12, offset: Offset(0, -1), blurRadius: 8)]),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: widget.tabs
-                .map((t) => TabItem(
-                    uniqueKey: t.key,
-                    selected: t.key == widget.tabs[currentSelected].key,
-                    widget: t.iconData,
-                    title: t.title,
-                    iconColor: inactiveIconColor,
-                    textColor: textColor,
-                    callbackFunction: (uniqueKey) {
-                      int selected = widget.tabs.indexWhere((tabData) => tabData.key == uniqueKey);
-                      widget.onTabChangedListener(selected);
-                      _setSelected(uniqueKey);
-                      _initAnimationAndStart(_circleAlignX, 1);
-                    }))
-                .toList(),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: widget.tabs
+                  .map((t) => TabItem(
+                      uniqueKey: t.key,
+                      selected: t.key == widget.tabs[currentSelected].key,
+                      widget: t.iconData,
+                      title: t.title,
+                      iconColor: inactiveIconColor,
+                      textColor: textColor,
+                      callbackFunction: (uniqueKey) {
+                        int selected = widget.tabs.indexWhere((tabData) => tabData.key == uniqueKey);
+                        widget.onTabChangedListener(selected);
+                        _setSelected(uniqueKey);
+                        _initAnimationAndStart(_circleAlignX, 1);
+                      }))
+                  .toList(),
+            ),
           ),
         ),
         Positioned.fill(
