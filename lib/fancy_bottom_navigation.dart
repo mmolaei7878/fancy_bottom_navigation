@@ -165,7 +165,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                           height: CIRCLE_SIZE,
                           width: CIRCLE_SIZE,
                           child: Container(
-                            decoration: BoxDecoration(shape: BoxShape.circle, color: circleColor),
+                            decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.transparent),
                             child: Padding(
                               padding: const EdgeInsets.all(0.0),
                               child: AnimatedOpacity(
