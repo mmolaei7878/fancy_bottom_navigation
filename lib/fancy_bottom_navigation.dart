@@ -141,19 +141,16 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                         SizedBox(
                           height: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
                           width: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
-                          child: ClipRect(
-                              clipper: HalfClipper(),
-                              child: Container(
-                                child: Center(
-                                  child: Container(
-                                      width: CIRCLE_SIZE + CIRCLE_OUTLINE,
-                                      height: CIRCLE_SIZE + CIRCLE_OUTLINE,
-                                      decoration: BoxDecoration(
-                                        color: Colors.transparent,
-                                        shape: BoxShape.circle,
-                                      )),
-                                ),
-                              )),
+                          child: Container(
+                              child: Center(
+                            child: Container(
+                                width: CIRCLE_SIZE + CIRCLE_OUTLINE,
+                                height: CIRCLE_SIZE + CIRCLE_OUTLINE,
+                                decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  shape: BoxShape.circle,
+                                )),
+                          )),
                         ),
                         SizedBox(
                             height: ARC_HEIGHT,
@@ -165,7 +162,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                           height: CIRCLE_SIZE,
                           width: CIRCLE_SIZE,
                           child: Container(
-                            decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.transparent),
+                            decoration: BoxDecoration(shape: BoxShape.circle, color: circleColor),
                             child: Padding(
                               padding: const EdgeInsets.all(0.0),
                               child: AnimatedOpacity(
