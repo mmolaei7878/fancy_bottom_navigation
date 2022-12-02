@@ -152,12 +152,12 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                                 )),
                           )),
                         ),
-                        SizedBox(
-                            height: ARC_HEIGHT,
-                            width: ARC_WIDTH,
-                            child: CustomPaint(
-                              painter: HalfPainter(barBackgroundColor),
-                            )),
+                        // SizedBox(
+                        //     height: ARC_HEIGHT,
+                        //     width: ARC_WIDTH,
+                        //     child: CustomPaint(
+                        //       painter: HalfPainter(barBackgroundColor),
+                        //     )),
                         SizedBox(
                           height: CIRCLE_SIZE,
                           width: CIRCLE_SIZE,
