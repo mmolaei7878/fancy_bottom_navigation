@@ -148,17 +148,16 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                         SizedBox(
                           height: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
                           width: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
-                          child: Container(
-                              color: Colors.transparent,
+                          child: SizedBox(
                               child: Center(
-                                child: Container(
-                                    width: CIRCLE_SIZE + CIRCLE_OUTLINE,
-                                    height: CIRCLE_SIZE + CIRCLE_OUTLINE,
-                                    decoration: BoxDecoration(
-                                      color: Colors.transparent,
-                                      shape: BoxShape.circle,
-                                    )),
-                              )),
+                            child: Container(
+                                width: CIRCLE_SIZE + CIRCLE_OUTLINE,
+                                height: CIRCLE_SIZE + CIRCLE_OUTLINE,
+                                decoration: BoxDecoration(
+                                  color: Colors.transparent,
+                                  shape: BoxShape.circle,
+                                )),
+                          )),
                         ),
                         SizedBox(
                           height: CIRCLE_SIZE,
@@ -170,11 +169,10 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                               child: AnimatedOpacity(
                                 duration: Duration(milliseconds: ANIM_DURATION ~/ 5),
                                 opacity: _circleIconAlpha,
-                                child: Container(
-                                    color: Colors.transparent,
+                                child: SizedBox(
                                     child: Center(
-                                      child: activeIcon,
-                                    )),
+                                  child: activeIcon,
+                                )),
                               ),
                             ),
                           ),
