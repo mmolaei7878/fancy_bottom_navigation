@@ -133,6 +133,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
             alignment: Alignment(_circleAlignX, 1),
             child: Container(
               decoration: BoxDecoration(
+                color: Colors.red,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
               ),
               child: Padding(
