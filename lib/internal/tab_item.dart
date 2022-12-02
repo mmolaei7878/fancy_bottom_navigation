@@ -9,16 +9,14 @@ const double ALPHA_ON = 1;
 const int ANIM_DURATION = 300;
 
 class TabItem extends StatelessWidget {
-  TabItem({
-    required this.uniqueKey,
-    required this.selected,
-    required this.widget,
-    required this.title,
-    required this.callbackFunction,
-    required this.textColor,
-    required this.iconColor,
-    this.fontSize,
-  });
+  TabItem(
+      {required this.uniqueKey,
+      required this.selected,
+      required this.widget,
+      required this.title,
+      required this.callbackFunction,
+      required this.textColor,
+      required this.iconColor});
 
   final UniqueKey uniqueKey;
   final String title;
@@ -27,7 +25,6 @@ class TabItem extends StatelessWidget {
   final Function(UniqueKey uniqueKey) callbackFunction;
   final Color textColor;
   final Color iconColor;
-  final double? fontSize;
 
   final double iconYAlign = ICON_ON;
   final double textYAlign = TEXT_OFF;
@@ -39,51 +36,43 @@ class TabItem extends StatelessWidget {
       child: Stack(
         fit: StackFit.expand,
         children: [
-          Positioned(
-            bottom: 0,
-            child: Container(
-                height: double.infinity,
-                width: double.infinity,
-                child: Align(
-                  alignment: Alignment(0, TEXT_ON),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      title,
-                      overflow: TextOverflow.ellipsis,
-                      maxLines: 1,
-                      style: TextStyle(
-                          fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
-                          fontSize: fontSize,
-                          color: textColor),
-                    ),
+          Container(
+            height: double.infinity,
+            width: double.infinity,
+            child: AnimatedAlign(
+                duration: Duration(milliseconds: ANIM_DURATION),
+                alignment: Alignment(0, TEXT_ON),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    title,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: TextStyle(fontWeight: selected ? FontWeight.w600 : FontWeight.w400, color: textColor),
                   ),
                 )),
           ),
-          Positioned(
-            top: 0,
-            child: Container(
-              height: double.infinity,
-              width: double.infinity,
-              child: AnimatedAlign(
+          Container(
+            height: double.infinity,
+            width: double.infinity,
+            child: AnimatedAlign(
+              duration: Duration(milliseconds: ANIM_DURATION),
+              curve: Curves.easeIn,
+              alignment: Alignment(0, (selected) ? ICON_OFF : ICON_ON),
+              child: AnimatedOpacity(
                 duration: Duration(milliseconds: ANIM_DURATION),
-                curve: Curves.easeIn,
-                alignment: Alignment(0, (selected) ? ICON_OFF : ICON_ON),
-                child: AnimatedOpacity(
-                  duration: Duration(milliseconds: ANIM_DURATION),
-                  opacity: (selected) ? ALPHA_OFF : ALPHA_ON,
-                  child: IconButton(
-                    highlightColor: Colors.transparent,
-                    splashColor: Colors.transparent,
-                    padding: EdgeInsets.all(0),
-                    alignment: Alignment(0, 0),
-                    icon: Center(
-                      child: widget,
-                    ),
-                    onPressed: () {
-                      callbackFunction(uniqueKey);
-                    },
+                opacity: (selected) ? ALPHA_OFF : ALPHA_ON,
+                child: IconButton(
+                  highlightColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  padding: EdgeInsets.all(0),
+                  alignment: Alignment(0, 0),
+                  icon: Center(
+                    child: widget,
                   ),
+                  onPressed: () {
+                    callbackFunction(uniqueKey);
+                  },
                 ),
               ),
             ),
