@@ -145,20 +145,20 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                     child: Stack(
                       alignment: Alignment.center,
                       children: <Widget>[
-                        SizedBox(
-                          height: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
-                          width: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
-                          child: SizedBox(
-                              child: Center(
-                            child: Container(
-                                width: CIRCLE_SIZE + CIRCLE_OUTLINE,
-                                height: CIRCLE_SIZE + CIRCLE_OUTLINE,
-                                decoration: BoxDecoration(
-                                  color: Colors.transparent,
-                                  shape: BoxShape.circle,
-                                )),
-                          )),
-                        ),
+                        // SizedBox(
+                        //   height: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
+                        //   width: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
+                        //   child: SizedBox(
+                        //       child: Center(
+                        //     child: Container(
+                        //         width: CIRCLE_SIZE + CIRCLE_OUTLINE,
+                        //         height: CIRCLE_SIZE + CIRCLE_OUTLINE,
+                        //         decoration: BoxDecoration(
+                        //           color: Colors.transparent,
+                        //           shape: BoxShape.circle,
+                        //         )),
+                        //   )),
+                        // ),
                         SizedBox(
                           height: CIRCLE_SIZE,
                           width: CIRCLE_SIZE,
