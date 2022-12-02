@@ -125,72 +125,66 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
             ),
           ),
         ),
-        Positioned.fill(
-          top: -(CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE) / 2,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-            ),
-            child: AnimatedAlign(
-              duration: Duration(milliseconds: ANIM_DURATION),
-              curve: Curves.easeOut,
-              alignment: Alignment(_circleAlignX, 1),
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 15),
-                child: FractionallySizedBox(
-                  widthFactor: 1 / widget.tabs.length,
-                  child: GestureDetector(
-                    onTap: widget.tabs[currentSelected].onclick as void Function()?,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: <Widget>[
-                        SizedBox(
-                          height: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
-                          width: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
-                          child: Container(
-                              child: Center(
-                            child: Container(
-                                width: CIRCLE_SIZE + CIRCLE_OUTLINE,
-                                height: CIRCLE_SIZE + CIRCLE_OUTLINE,
-                                decoration: BoxDecoration(
-                                  color: Colors.transparent,
-                                  shape: BoxShape.circle,
-                                )),
-                          )),
-                        ),
-                        // SizedBox(
-                        //     height: ARC_HEIGHT,
-                        //     width: ARC_WIDTH,
-                        //     child: CustomPaint(
-                        //       painter: HalfPainter(barBackgroundColor),
-                        //     )),
-                        SizedBox(
-                          height: CIRCLE_SIZE,
-                          width: CIRCLE_SIZE,
-                          child: Container(
-                            decoration: BoxDecoration(shape: BoxShape.circle, color: circleColor),
-                            child: Padding(
-                              padding: const EdgeInsets.all(0.0),
-                              child: AnimatedOpacity(
-                                duration: Duration(milliseconds: ANIM_DURATION ~/ 5),
-                                opacity: _circleIconAlpha,
-                                child: Container(
-                                    color: activeIconColor,
-                                    child: Center(
-                                      child: activeIcon,
-                                    )),
-                              ),
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        )
+        // Positioned.fill(
+        //   top: -(CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE) / 2,
+        //   child: Container(
+        //     decoration: BoxDecoration(
+        //       borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+        //     ),
+        //     child: AnimatedAlign(
+        //       duration: Duration(milliseconds: ANIM_DURATION),
+        //       curve: Curves.easeOut,
+        //       alignment: Alignment(_circleAlignX, 1),
+        //       child: Padding(
+        //         padding: const EdgeInsets.only(bottom: 15),
+        //         child: FractionallySizedBox(
+        //           widthFactor: 1 / widget.tabs.length,
+        //           child: GestureDetector(
+        //             onTap: widget.tabs[currentSelected].onclick as void Function()?,
+        //             child: Stack(
+        //               alignment: Alignment.center,
+        //               children: <Widget>[
+        //                 SizedBox(
+        //                   height: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
+        //                   width: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
+        //                   child: Container(
+        //                       child: Center(
+        //                     child: Container(
+        //                         width: CIRCLE_SIZE + CIRCLE_OUTLINE,
+        //                         height: CIRCLE_SIZE + CIRCLE_OUTLINE,
+        //                         decoration: BoxDecoration(
+        //                           color: Colors.transparent,
+        //                           shape: BoxShape.circle,
+        //                         )),
+        //                   )),
+        //                 ),
+        //                 SizedBox(
+        //                   height: CIRCLE_SIZE,
+        //                   width: CIRCLE_SIZE,
+        //                   child: Container(
+        //                     decoration: BoxDecoration(shape: BoxShape.circle, color: circleColor),
+        //                     child: Padding(
+        //                       padding: const EdgeInsets.all(0.0),
+        //                       child: AnimatedOpacity(
+        //                         duration: Duration(milliseconds: ANIM_DURATION ~/ 5),
+        //                         opacity: _circleIconAlpha,
+        //                         child: Container(
+        //                             color: activeIconColor,
+        //                             child: Center(
+        //                               child: activeIcon,
+        //                             )),
+        //                       ),
+        //                     ),
+        //                   ),
+        //                 )
+        //               ],
+        //             ),
+        //           ),
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // )
       ],
     );
   }
