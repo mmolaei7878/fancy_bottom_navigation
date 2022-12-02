@@ -52,6 +52,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
   late Color inactiveIconColor;
   late Color barBackgroundColor;
   late Color textColor;
+  late Color circleClipperColor;
 
   @override
   void didChangeDependencies() {
@@ -148,7 +149,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                                       width: CIRCLE_SIZE + CIRCLE_OUTLINE,
                                       height: CIRCLE_SIZE + CIRCLE_OUTLINE,
                                       decoration: BoxDecoration(
-                                          color: Colors.white,
+                                          color: circleClipperColor,
                                           shape: BoxShape.circle,
                                           boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 8)])),
                                 ),
