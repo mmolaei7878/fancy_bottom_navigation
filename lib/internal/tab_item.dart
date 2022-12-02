@@ -44,7 +44,7 @@ class TabItem extends StatelessWidget {
                 duration: Duration(milliseconds: ANIM_DURATION),
                 alignment: Alignment(0, TEXT_ON),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Text(
                     title,
                     overflow: TextOverflow.ellipsis,
