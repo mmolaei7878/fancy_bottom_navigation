@@ -143,7 +143,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                       SizedBox(
                         height: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
                         width: CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE,
-                        child: Container(
+                        child: SizedBox(
                             child: Center(
                           child: Container(
                               width: CIRCLE_SIZE + CIRCLE_OUTLINE,
