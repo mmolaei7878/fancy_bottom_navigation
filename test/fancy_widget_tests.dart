@@ -5,8 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   Widget makeTestableWidget({required Widget child}) {
     return MaterialApp(
-        theme:
-            ThemeData(primaryColor: Colors.pink, brightness: Brightness.light),
+        theme: ThemeData(primaryColor: Colors.pink, brightness: Brightness.light),
         home: Scaffold(body: Center(), bottomNavigationBar: child));
   }
 

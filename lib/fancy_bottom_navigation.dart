@@ -142,12 +142,9 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                         child: SizedBox(
                             child: Center(
                           child: Container(
-                              width: CIRCLE_SIZE + CIRCLE_OUTLINE,
-                              height: CIRCLE_SIZE + CIRCLE_OUTLINE,
-                              decoration: BoxDecoration(
-                                color: Colors.transparent,
-                                shape: BoxShape.circle,
-                              )),
+                            width: CIRCLE_SIZE + CIRCLE_OUTLINE,
+                            height: CIRCLE_SIZE + CIRCLE_OUTLINE,
+                          ),
                         )),
                       ),
                       SizedBox(
@@ -173,15 +170,6 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
         )
       ],
     );
-  }
-
-  void setPage(int page) {
-    widget.onTabChangedListener(page);
-    _setSelected(widget.tabs[page].key);
-    setState(() {
-      // activeIcon = nextIcon;
-      currentSelected = page;
-    });
   }
 }
 
