@@ -39,13 +39,16 @@ class TabItem extends StatelessWidget {
           Container(
               height: double.infinity,
               width: double.infinity,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  title,
-                  overflow: TextOverflow.ellipsis,
-                  maxLines: 1,
-                  style: TextStyle(fontWeight: FontWeight.w600, color: textColor),
+              child: Align(
+                alignment: Alignment(0, TEXT_ON),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    title,
+                    overflow: TextOverflow.ellipsis,
+                    maxLines: 1,
+                    style: TextStyle(fontWeight: FontWeight.w600, color: textColor),
+                  ),
                 ),
               )),
           Container(
