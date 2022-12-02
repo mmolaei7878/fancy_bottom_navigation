@@ -119,7 +119,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                         int selected = widget.tabs.indexWhere((tabData) => tabData.key == uniqueKey);
                         widget.onTabChangedListener(selected);
                         _setSelected(uniqueKey);
-                        _initAnimationAndStart(_circleAlignX, 1);
+                        // _initAnimationAndStart(_circleAlignX, 1);
                       }))
                   .toList(),
             ),
@@ -181,22 +181,6 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
         )
       ],
     );
-  }
-
-  _initAnimationAndStart(double from, double to) {
-    _circleIconAlpha = 0;
-
-    Future.delayed(Duration(milliseconds: ANIM_DURATION ~/ 5), () {
-      setState(() {
-        activeIcon = nextIcon;
-      });
-    }).then((_) {
-      Future.delayed(Duration(milliseconds: (ANIM_DURATION ~/ 5 * 3)), () {
-        setState(() {
-          _circleIconAlpha = 1;
-        });
-      });
-    });
   }
 
   void setPage(int page) {
