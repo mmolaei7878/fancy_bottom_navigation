@@ -154,24 +154,18 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                               )),
                         )),
                       ),
-                      // SizedBox(
-                      //     height: ARC_HEIGHT,
-                      //     width: ARC_WIDTH,
-                      //     child: CustomPaint(
-                      //       painter: HalfPainter(barBackgroundColor),
-                      //     )),
                       SizedBox(
                         height: CIRCLE_SIZE,
                         width: CIRCLE_SIZE,
                         child: Container(
-                          decoration: BoxDecoration(shape: BoxShape.circle, color: circleColor),
+                          decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.red),
                           child: Padding(
                             padding: const EdgeInsets.all(0.0),
                             child: AnimatedOpacity(
                               duration: Duration(milliseconds: ANIM_DURATION ~/ 5),
                               opacity: _circleIconAlpha,
                               child: Container(
-                                  color: activeIconColor,
+                                  color: Colors.transparent,
                                   child: Center(
                                     child: activeIcon,
                                   )),
