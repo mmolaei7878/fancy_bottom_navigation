@@ -44,7 +44,6 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
 
   int currentSelected = 0;
   double _circleAlignX = 0;
-  double _circleIconAlpha = 1;
 
   late Color circleColor;
   late Color activeIconColor;
@@ -127,9 +126,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
         ),
         Positioned.fill(
           top: -(CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE) / 2,
-          child: AnimatedAlign(
-            duration: Duration(milliseconds: ANIM_DURATION),
-            curve: Curves.easeOut,
+          child: Align(
             alignment: Alignment(_circleAlignX, 1),
             child: Padding(
               padding: const EdgeInsets.only(bottom: 15),
@@ -160,15 +157,11 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                         child: SizedBox(
                           child: Padding(
                             padding: const EdgeInsets.all(0.0),
-                            child: AnimatedOpacity(
-                              duration: Duration(milliseconds: ANIM_DURATION ~/ 5),
-                              opacity: _circleIconAlpha,
-                              child: Container(
-                                  color: Colors.transparent,
-                                  child: Center(
-                                    child: activeIcon,
-                                  )),
-                            ),
+                            child: Container(
+                                color: Colors.transparent,
+                                child: Center(
+                                  child: activeIcon,
+                                )),
                           ),
                         ),
                       )
@@ -186,11 +179,8 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
   void setPage(int page) {
     widget.onTabChangedListener(page);
     _setSelected(widget.tabs[page].key);
-    // _initAnimationAndStart(_circleAlignX, 1);
-
     setState(() {
       activeIcon = nextIcon;
-
       currentSelected = page;
     });
   }
