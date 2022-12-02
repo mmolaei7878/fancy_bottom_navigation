@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 const double ICON_OFF = -3;
-const double ICON_ON = 0;
+// const double ICON_ON = 0;
 const double TEXT_OFF = 3;
 const double TEXT_ON = 1;
 const double ALPHA_OFF = 0;
@@ -11,7 +11,6 @@ const int ANIM_DURATION = 300;
 class TabItem extends StatelessWidget {
   TabItem(
       {required this.uniqueKey,
-      required this.selected,
       required this.widget,
       required this.title,
       required this.callbackFunction,
@@ -21,12 +20,11 @@ class TabItem extends StatelessWidget {
   final UniqueKey uniqueKey;
   final String title;
   final Widget widget;
-  final bool selected;
   final Function(UniqueKey uniqueKey) callbackFunction;
   final Color textColor;
   final Color iconColor;
 
-  final double iconYAlign = ICON_ON;
+  // final double iconYAlign = ICON_ON;
   final double textYAlign = TEXT_OFF;
   final double iconAlpha = ALPHA_ON;
 
@@ -48,7 +46,7 @@ class TabItem extends StatelessWidget {
                     title,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 1,
-                    style: TextStyle(fontWeight: selected ? FontWeight.w600 : FontWeight.w400, color: textColor),
+                    style: TextStyle(fontWeight: FontWeight.w400, color: textColor),
                   ),
                 )),
           ),
@@ -58,10 +56,10 @@ class TabItem extends StatelessWidget {
             child: AnimatedAlign(
               duration: Duration(milliseconds: ANIM_DURATION),
               curve: Curves.easeIn,
-              alignment: Alignment(0, (selected) ? ICON_OFF : ICON_ON),
+              alignment: Alignment(0, ICON_OFF),
               child: AnimatedOpacity(
                 duration: Duration(milliseconds: ANIM_DURATION),
-                opacity: (selected) ? ALPHA_OFF : ALPHA_ON,
+                opacity: 1,
                 child: IconButton(
                   highlightColor: Colors.transparent,
                   splashColor: Colors.transparent,

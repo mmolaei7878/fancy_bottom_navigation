@@ -1,8 +1,6 @@
 library fancy_bottom_navigation;
 
 import 'package:fancy_bottom_navigation/internal/tab_item.dart';
-import 'package:fancy_bottom_navigation/paint/half_clipper.dart';
-import 'package:fancy_bottom_navigation/paint/half_painter.dart';
 import 'package:flutter/material.dart';
 
 const double CIRCLE_SIZE = 60;
@@ -108,7 +106,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
             children: widget.tabs
                 .map((t) => TabItem(
                     uniqueKey: t.key,
-                    selected: t.key == widget.tabs[currentSelected].key,
+                    // selected: t.key == widget.tabs[currentSelected].key,
                     widget: t.iconData,
                     title: t.title,
                     iconColor: inactiveIconColor,
