@@ -179,7 +179,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
     widget.onTabChangedListener(page);
     _setSelected(widget.tabs[page].key);
     setState(() {
-      activeIcon = nextIcon;
+      // activeIcon = nextIcon;
       currentSelected = page;
     });
   }
