@@ -23,7 +23,6 @@ class FancyBottomNavigation extends StatefulWidget {
     this.inactiveIconColor,
     this.textColor,
     this.barBackgroundColor,
-    this.circleClipperColor,
   });
 
   final Function(int position) onTabChangedListener;
@@ -34,7 +33,6 @@ class FancyBottomNavigation extends StatefulWidget {
   final Color? barBackgroundColor;
   final List<TabData> tabs;
   final int initialSelection;
-  final Color? circleClipperColor;
 
   final Key? key;
 
@@ -55,7 +53,6 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
   late Color inactiveIconColor;
   late Color barBackgroundColor;
   late Color textColor;
-  late Color circleClipperColor;
 
   @override
   void didChangeDependencies() {
@@ -152,9 +149,9 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                                       width: CIRCLE_SIZE + CIRCLE_OUTLINE,
                                       height: CIRCLE_SIZE + CIRCLE_OUTLINE,
                                       decoration: BoxDecoration(
-                                          color: circleClipperColor,
-                                          shape: BoxShape.circle,
-                                          boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 8)])),
+                                        color: Colors.transparent,
+                                        shape: BoxShape.circle,
+                                      )),
                                 ),
                               )),
                         ),
