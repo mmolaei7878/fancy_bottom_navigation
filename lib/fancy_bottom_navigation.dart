@@ -43,7 +43,6 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
   Widget activeIcon = Icon(Icons.search);
 
   int currentSelected = 0;
-  double _circleAlignX = 0;
 
   late Color circleColor;
   late Color activeIconColor;
@@ -82,7 +81,6 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
     if (mounted) {
       setState(() {
         currentSelected = selected;
-        _circleAlignX = -1 + (2 / (widget.tabs.length - 1) * selected);
         nextIcon = widget.tabs[selected].iconData;
       });
     }
@@ -118,7 +116,6 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
                         int selected = widget.tabs.indexWhere((tabData) => tabData.key == uniqueKey);
                         widget.onTabChangedListener(selected);
                         _setSelected(uniqueKey);
-                        // _initAnimationAndStart(_circleAlignX, 1);
                       }))
                   .toList(),
             ),
@@ -127,7 +124,7 @@ class FancyBottomNavigationState extends State<FancyBottomNavigation> with Ticke
         Positioned.fill(
           top: -(CIRCLE_SIZE + CIRCLE_OUTLINE + SHADOW_ALLOWANCE) / 2,
           child: Align(
-            alignment: Alignment(_circleAlignX, 1),
+            alignment: Alignment(0, 1),
             child: Padding(
               padding: const EdgeInsets.only(bottom: 15),
               child: FractionallySizedBox(
